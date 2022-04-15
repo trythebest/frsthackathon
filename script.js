@@ -1,4 +1,3 @@
-document.getElementById("boxsearch").addEventListener("keyup", filtersearch);
 
 
 
@@ -73,3 +72,26 @@ document.getElementById("boxsearch").addEventListener("keyup", filtersearch);
 
             }
             foo();
+ function filtersearch(){
+                var input, filter,table, tr, td, i,txtValues;
+                input=document.getElementById("boxsearch");
+                filter=input.value.toUpperCase();
+                table=document.getElementsByClassName("table");
+                tr=document.getElementsByClassName("tr");
+                 for(i=0;i<tr.length;i++){
+                     td=tr[i].getElementsByTagName("td")[0];
+                     if(td){
+                         txtValues=td.textContent||td.innerText;
+                         if(txtValues.toUpperCase().indexOf(filter) > -1){
+                             tr[i].style.backgroundColor="red";
+                         }else{
+                             tr[i].style.display="none";
+                         }
+                     }
+                 }
+
+            }
+
+            
+
+
