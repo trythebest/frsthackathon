@@ -1,7 +1,4 @@
 
-
-
-   
             var table = document.createElement("table");
             table.className = "table";
             //head code
@@ -9,6 +6,7 @@
             thead.className = "thead-dark";
 
             var tr = document.createElement("tr");
+            
 
             var th1 = createtrth("th", "Books");
             var th2 = createtrth("th", "ISBN");
@@ -23,6 +21,8 @@
             //body of the table code
             var tbody = document.createElement("tbody");
             var tr = document.createElement("tr");
+            tr.className="tr";
+            
 
             async function foo() {
                 try {
@@ -46,6 +46,7 @@
 
             table.append(thead, tbody);
             document.body.append(table);
+            foo();
 
             function td(cname, cisbn, cnumberOfPages, cauthors, cpublisher, creleased) {
 
@@ -57,6 +58,7 @@
                 var rel = createtrth("td", creleased);
 
                 var tr = document.createElement("tr");
+                tr.className="tr"
                 tr.append(bok, is, no, aut, pub, rel);
                 return tr;
 
@@ -71,8 +73,9 @@
                 return ele;
 
             }
-            foo();
- function filtersearch(){
+
+
+            function filtersearch(){
                 var input, filter,table, tr, td, i,txtValues;
                 input=document.getElementById("boxsearch");
                 filter=input.value.toUpperCase();
@@ -94,4 +97,4 @@
 
             
 
-
+           
